@@ -75,4 +75,8 @@ public class ShoppingCart {
 //
 //        return categories.toString();
     }
+
+    public ArrayList<GroceryItem> getCart() {
+        return cart;
+    }
 }
