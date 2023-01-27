@@ -69,15 +69,30 @@ public class ShoppingViewController implements Initializable {
             }
         }
 
+        Collections.sort(inventory, new Comparator<GroceryItem>() {
+            @Override
+            public int compare(GroceryItem o1, GroceryItem o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+
+        categoryComboBox.getItems().add("All Categories");
         categoryComboBox.getItems().addAll(food.keySet());
         categoryComboBox.valueProperty().addListener((obs, old, categorySelected)->{
             groceryListView.getItems().clear();
-            for (GroceryItem groceryItem : inventory)
+            if (categorySelected.equals("All Categories"))
+                groceryListView.getItems().addAll(inventory);
+            else
             {
-                if (groceryItem.getCategory().equals(categorySelected))
-                    groceryListView.getItems().add(groceryItem);
+                for (GroceryItem groceryItem : inventory)
+                {
+                    if (groceryItem.getCategory().equals(categorySelected))
+                        groceryListView.getItems().add(groceryItem);
+                }
             }
         });
+
+        groceryListView.getItems().addAll(inventory);
 
         groceryListView.getSelectionModel().selectedItemProperty().addListener((obs, old, itemSelected)->{
             updateLabels(itemSelected);

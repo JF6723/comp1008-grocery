@@ -9,28 +9,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="650.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.groceryexample.ShoppingViewController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.groceryexample.ShoppingViewController">
    <children>
       <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Grab and Go Grocery" />
+            <Label id="header" text="Grab and Go Grocery" />
             <HBox alignment="CENTER" prefHeight="500.0" prefWidth="645.0" spacing="30.0">
                <children>
                   <VBox spacing="10.0">
                      <children>
-                        <ComboBox fx:id="categoryComboBox" prefWidth="150.0" promptText="Select Category" />
-                        <ListView fx:id="groceryListView" prefHeight="150.0" prefWidth="200.0" />
+                        <ComboBox id="round" fx:id="categoryComboBox" promptText="Select Category" />
+                        <ListView id="round" fx:id="groceryListView" minHeight="400.0" prefHeight="400.0" prefWidth="300.0" />
                         <Label fx:id="nameLabel" text="Label" />
                         <Label fx:id="priceLabel" text="Label" />
                         <Label fx:id="categoryLabel" text="Label" />
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#addToCart" text="Add to Cart -&gt;" />
+                  <Button id="round" mnemonicParsing="false" onAction="#addToCart" text="Add to Cart -&gt;" />
                   <VBox spacing="10.0">
                      <children>
-                        <Label text="Shoping Cart" />
-                        <ListView fx:id="cartItemsListView" prefHeight="300.0" prefWidth="200.0" />
+                        <Label text="Shopping Cart" />
+                        <ListView id="round" fx:id="cartItemsListView" prefHeight="400.0" prefWidth="300.0" />
                         <Label fx:id="totalLabel" text="Total:" />
                      </children>
                   </VBox>
