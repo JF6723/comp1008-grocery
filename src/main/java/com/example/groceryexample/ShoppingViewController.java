@@ -41,10 +41,24 @@ public class ShoppingViewController implements Initializable {
         GroceryItem itemSelected = groceryListView.getSelectionModel().getSelectedItem();
         if (itemSelected != null){
             cart.addGroceryItem(itemSelected);
-            totalLabel.setText(String.format("Total Price: $%.2f",cart.getTotalPrice()));
-            cartItemsListView.getItems().clear();
-            cartItemsListView.getItems().addAll(cart.getCart());
+            updateCartDisplay();
         }
+    }
+
+    private void updateCartDisplay()
+    {
+        totalLabel.setText(String.format("Total Price: $%.2f",cart.getTotalPrice()));
+        cartItemsListView.getItems().clear();
+        cartItemsListView.getItems().addAll(cart.getCart());
+    }
+
+    @FXML
+    private void removeFromCart()
+    {
+        GroceryItem itemSelected = cartItemsListView.getSelectionModel().getSelectedItem();
+        if (itemSelected != null)
+            cart.removeGroceryItem(itemSelected);
+        updateCartDisplay();
     }
 
     @Override

@@ -24,5 +24,9 @@ public class Main {
         System.out.println(cart);
         System.out.println(cart.getGroceryNames());
         System.out.println(cart.getCategories());
+
+        String carrotString = "carrots, $4.79, vegetable";
+        System.out.println(carrotString);
+        System.out.println(carrots);
     }
 }

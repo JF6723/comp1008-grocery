@@ -25,7 +25,12 @@
                         <Label fx:id="categoryLabel" text="Label" />
                      </children>
                   </VBox>
-                  <Button id="round" mnemonicParsing="false" onAction="#addToCart" text="Add to Cart -&gt;" />
+                  <VBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <Button id="round" mnemonicParsing="false" onAction="#addToCart" prefWidth="200.0" text="Add to Cart -&gt;" />
+                        <Button id="round" mnemonicParsing="false" onAction="#removeFromCart" prefWidth="200.0" text="&lt;- Remove" />
+                     </children>
+                  </VBox>
                   <VBox spacing="10.0">
                      <children>
                         <Label text="Shopping Cart" />
